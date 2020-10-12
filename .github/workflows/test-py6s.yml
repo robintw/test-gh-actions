@@ -11,9 +11,8 @@ jobs:
           python-version: 3.7
           channels: conda-forge
           activate-environment: py6s-test
-      - run: |
+      - shell: bash -l {0}
+        run: |
           conda install py6s
-      - name: Setup tmate session
-        uses: mxschmitt/action-tmate@v3
-      - run: python -c 'import Py6S'
-      - run: python -c "from Py6S import *; SixS.test()"
+      - shell: bash -l {0}
+        run: python -c "from Py6S import *; SixS.test()"
