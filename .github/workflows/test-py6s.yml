@@ -11,7 +11,5 @@ jobs:
           python-version: 3.7
           channels: conda-forge
       - run: |
-          conda info
-          conda list
-          conda config --show-sources
-          conda config --show
+          conda install py6s
+          python -c "from Py6S import *; SixS.test()"
