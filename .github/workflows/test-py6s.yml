@@ -10,6 +10,8 @@ jobs:
         with:
           python-version: 3.7
           channels: conda-forge
+          activate-environment: py6s-test
       - run: |
           conda install py6s
-          python -c "from Py6S import *; SixS.test()"
+      - run: python -c 'import Py6S'
+      - run: python -c "from Py6S import *; SixS.test()"
