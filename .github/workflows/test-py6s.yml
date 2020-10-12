@@ -13,5 +13,7 @@ jobs:
           activate-environment: py6s-test
       - run: |
           conda install py6s
+      - name: Setup tmate session
+        uses: mxschmitt/action-tmate@v3
       - run: python -c 'import Py6S'
       - run: python -c "from Py6S import *; SixS.test()"
